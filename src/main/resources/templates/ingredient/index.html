@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="~{fragments :: head}"></head>
+
+<body>
+    <header th:replace="~{fragments :: header}"></header>
+    <div th:replace="~{fragments :: ingredientNav}"></div>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Ingredient Name</th>
+        </tr>
+        </thead>
+        <tr th:each="ingredient : ${ingredients}">
+            <!-- TODO: may need to alter this anchor tag to work with ingredients properly -->
+<!--            <td><a th:href="'/ingredients/detail?ingredientId=' + ${ingredient.id}" th:text="${ingredient.name}"></a></td>-->
+            <td th:text="${ingredient.name}"></td>
+        </tr>
+    </table>
+</body>
+</html>

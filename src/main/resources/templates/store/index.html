@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="~{fragments :: head}"></head>
+
+<body>
+    <header th:replace="~{fragments :: header}"></header>
+    <div th:replace="~{fragments :: storeNav}"></div>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Store Name</th>
+        </tr>
+        </thead>
+        <tr th:each="store : ${stores}">
+            <td th:text="${store.name}" ></td>
+            <!--            TODO: may need to alter this anchor tag to work-->
+            <!--            <td><a th:href="'/stores/detail?storeId=' + ${store.id}" th:text="${store.name}"></a></td>-->
+        </tr>
+    </table>
+</body>
+</html>

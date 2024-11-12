@@ -7,8 +7,8 @@ import jakarta.validation.constraints.NotBlank;
 
 import java.util.Objects;
 
-@MappedSuperclass
-public class AbstractEntity {
+
+public abstract class AbstractEntity {
 
     //Add the id and name fields to be shared across all the classes
     //Add @Id & @GeneratedValue to the id field

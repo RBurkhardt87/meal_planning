@@ -6,7 +6,7 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-@Entity
+
 public class Recipe extends AbstractEntity {
 
     //fields
@@ -27,7 +27,7 @@ public class Recipe extends AbstractEntity {
     //TODO: this will become a one to one relationship
     //it will need to have proper annotation for one link per recipe
     @NotNull
-    private RecipeLink recipeLink;
+    private String recipeLink;
 
 
 }

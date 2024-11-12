@@ -4,7 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 
-@Entity
+
 public class Ingredient extends AbstractEntity {
 
     @Min(value = 1, message = "Quantity must be at least one.")
@@ -12,14 +12,14 @@ public class Ingredient extends AbstractEntity {
 
     //TODO: this will end up being a one to many with stores. It will become a list
     @NotNull
-    private Store store;
+    private String store;
 
     //Generate an empty constructor for hibernate
     public Ingredient() {
     }
 
     //Generate a loaded constructor that calls to the parent one
-    public Ingredient(String name, int quantity, Store store) {
+    public Ingredient(String name, int quantity, String store) {
         super(name);
         this.quantity = quantity;
         this.store = store;
@@ -31,7 +31,7 @@ public class Ingredient extends AbstractEntity {
         return quantity;
     }
 
-    public @NotNull Store getStore() {
+    public @NotNull String getStore() {
         return store;
     }
 
@@ -40,7 +40,7 @@ public class Ingredient extends AbstractEntity {
         this.quantity = quantity;
     }
 
-    public void setStore(@NotNull Store store) {
+    public void setStore(@NotNull String store) {
         this.store = store;
     }
 }

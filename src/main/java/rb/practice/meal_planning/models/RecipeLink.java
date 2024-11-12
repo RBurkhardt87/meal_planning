@@ -5,10 +5,16 @@ import jakarta.validation.constraints.Pattern;
 
 public class RecipeLink extends AbstractEntity{
 
+
     //fields
     @NotBlank
     @Pattern(regexp = "^(https?|ftp):\\/\\/[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)+([\\/\\w\\-\\?%&=]*)?$", message = "Invalid URL format")
     private String url;
+
+
+    //TODO: this will become a one to one relationship with recipes, proper annotation will be needed.
+    //think on if this needs to bidirectional or not. I don't think it does. The link doesn't need to access the recipe, the recipe is what needs to be aware of the link, right?
+    private Recipe recipe;
 
     //empty constructor
     public RecipeLink() {

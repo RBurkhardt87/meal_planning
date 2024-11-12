@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+
+<head th:replace="~{fragments :: head}"></head>
+
+<body>
+    <header th:replace="~{fragments :: header}"></header>
+    <div th:replace="~{fragments :: mainNav}"></div>
+        <main>
+            <div>
+                <p>Use the Navigation links to pick where you would like to start.<br>
+                    Once you find yourself either in Recipe, Ingredients or Store <br>
+                    you will be able to create, delete, and view all your options. <br>
+                    Why don't you try creating one of them now...
+                </p>
+            </div>
+            <div>
+                <img th:src="@{images/foodimg.jpeg}" alt="food">
+            </div>
+        </main>
+
+
+</body>
+</html>
+
