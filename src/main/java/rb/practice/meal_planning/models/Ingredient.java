@@ -11,18 +11,18 @@ public class Ingredient extends AbstractEntity {
     private int quantity;
 
     //TODO: this will end up being a one to many with stores. It will become a list
-    @NotNull
-    private String store;
+   //TODO: add validation back on so it can't be blank
+//    private Store store;
 
     //Generate an empty constructor for hibernate
     public Ingredient() {
     }
 
     //Generate a loaded constructor that calls to the parent one
-    public Ingredient(String name, int quantity, String store) {
+    public Ingredient(String name, int quantity) {
         super(name);
         this.quantity = quantity;
-        this.store = store;
+
     }
 
     //getters for the fields
@@ -31,16 +31,11 @@ public class Ingredient extends AbstractEntity {
         return quantity;
     }
 
-    public @NotNull String getStore() {
-        return store;
-    }
+
 
     //setters for the fields
     public void setQuantity(@Min(value = 1, message = "Quantity must be at least one.") int quantity) {
         this.quantity = quantity;
     }
 
-    public void setStore(@NotNull String store) {
-        this.store = store;
-    }
 }

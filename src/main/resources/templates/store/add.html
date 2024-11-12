@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 
-<head>
-    <meta charset="UTF-8"/>
-    <title></title>
-</head>
+<head th:replace="~{fragments :: head}"></head>
+
 <body>
+    <header th:replace="~{fragments :: header}"></header>
+    <div th:replace="~{fragments :: ingredientNav}"></div>
+        <form method="post">
+            <div class="form-group">
+                <label>Store Name:
+                    <input th:field="${store.name}" class="form-control">
+                </label>
+                <p class="error" th:errors="${store.name}"></p>
+            </div>
+            <div class="form-group">
+                <label> Store Location:
+                    <input th:field="${store.storeLocation}" class="form-control">
+                </label>
+                <p class="error" th:errors="${store.storeLocation}"></p>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-success">
+            </div>
+        </form>
 
 </body>
 </html>

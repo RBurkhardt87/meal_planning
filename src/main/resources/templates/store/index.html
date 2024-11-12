@@ -9,12 +9,14 @@
         <thead>
         <tr>
             <th>Store Name</th>
+            <th>Store Location</th>
         </tr>
         </thead>
         <tr th:each="store : ${stores}">
             <td th:text="${store.name}" ></td>
             <!--            TODO: may need to alter this anchor tag to work-->
             <!--            <td><a th:href="'/stores/detail?storeId=' + ${store.id}" th:text="${store.name}"></a></td>-->
+            <td th:text="${store.storeLocation}"></td>
         </tr>
     </table>
 </body>
